@@ -12,9 +12,14 @@ A very rough script. Inefficient and cobbled together. But did the job of a one-
 Perhaps some issues remain - out of 13k messages I had about 10 fail to import and a couple of conversations show 'loading mms' every time I open them. I don't know if it was the conversion or if they were bad in the original. But those results were good enough for me.
  
 Instructions:
-- Change the variables 'pathToTextraData' and 'myMobileNumber'
-- Run the export to read your textra data and produce an XML file
-- Import that XML file onto your device using SMS Backup and restore
+- Clone this repo or download convert.groovy
+- Change the variables 'pathToTextraData' to a path to your backup directory with Textra's 'data' folder
+- Change the variable 'myMobileNumber' to be your mobile number with + prefix
+- Install Groovy from http://www.groovy-lang.org/download.html
+- Run the export to read your textra data and produce an XML file (i.e. `groovy convert.groovy`)
+- Copy XML file onto your device
+- Install 'SMS Backup and Restore' on the device from the play store
+- Use 'SMS Backup and Restore' to load the file and import the messages
  
 Thanks to
 - Textra - http://www.textra.me/
@@ -23,3 +28,6 @@ Thanks to
 Both great apps. It was my ignorance with backups which left me with only a Textra database and not a stock messaging database.
 
 Tested on Textra version 2.5, SMS Backup and Restore version 7.42, and messaging database  from a Samsung S6 5.0 stock firmware.
+
+Possible issues:
+- This was tested on a mac. Linux should work OK too. For Windows, you might need to edit the paths to the files but it might work.
